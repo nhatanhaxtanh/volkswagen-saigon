@@ -15,7 +15,6 @@ export const metadata: Metadata = {
 export default function XePage() {
   return (
     <main className="min-h-screen bg-gray-50 pt-16">
-      {/* Page header */}
       <div className="bg-[#001e50] py-12">
         <div className="max-w-7xl mx-auto px-4">
           <Link
@@ -37,7 +36,6 @@ export default function XePage() {
         </div>
       </div>
 
-      {/* Car grid */}
       <div className="max-w-7xl mx-auto px-4 py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {cars.map((car) => (
@@ -45,7 +43,7 @@ export default function XePage() {
               key={car.id}
               className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group flex flex-col"
             >
-              <div className="relative h-52 bg-gray-50 overflow-hidden">
+              <Link href={car.href} className="relative h-52 bg-gray-50 overflow-hidden block">
                 <Image
                   src={car.image}
                   alt={car.name}
@@ -58,12 +56,14 @@ export default function XePage() {
                     {car.badge}
                   </Badge>
                 )}
-              </div>
+              </Link>
               <div className="p-5 flex flex-col flex-1">
-                <h2 className="font-bold text-[#001e50] text-sm leading-snug mb-3 flex-1">
-                  {car.name}
-                </h2>
-                <div className="mb-4">
+                <Link href={car.href}>
+                  <h2 className="font-bold text-[#001e50] text-sm leading-snug mb-3 hover:text-blue-600 transition-colors">
+                    {car.name}
+                  </h2>
+                </Link>
+                <div className="mb-4 flex-1">
                   {car.originalPrice && (
                     <p className="text-gray-400 text-xs line-through mb-0.5">
                       {car.originalPrice}

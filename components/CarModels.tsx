@@ -76,7 +76,7 @@ export default function CarModels() {
               >
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 h-full flex flex-col">
                   {/* Image */}
-                  <div className="relative h-52 bg-gray-50 overflow-hidden">
+                  <Link href={car.href} className="relative h-52 bg-gray-50 overflow-hidden block">
                     <Image
                       src={car.image}
                       alt={car.name}
@@ -89,14 +89,16 @@ export default function CarModels() {
                         {car.badge}
                       </Badge>
                     )}
-                  </div>
+                  </Link>
 
                   {/* Info */}
                   <div className="p-5 flex flex-col flex-1">
-                    <h3 className="font-bold text-[#001e50] text-sm leading-snug mb-3 flex-1">
-                      {car.name}
-                    </h3>
-                    <div className="mb-4">
+                    <Link href={car.href}>
+                      <h3 className="font-bold text-[#001e50] text-sm leading-snug mb-3 hover:text-blue-600 transition-colors">
+                        {car.name}
+                      </h3>
+                    </Link>
+                    <div className="mb-4 flex-1">
                       {car.originalPrice && (
                         <p className="text-gray-400 text-xs line-through mb-0.5">
                           {car.originalPrice}
