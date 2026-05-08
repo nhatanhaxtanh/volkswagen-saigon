@@ -1,6 +1,6 @@
 export const PHONE = "076 4949837";
 export const PHONE_HREF = "tel:0764949837";
-export const EMAIL = "vwthaodien.vn@gmail.com";
+export const EMAIL = "thanhvinh6701@gmail.com";
 export const ADDRESS = "507C Võ Nguyễn Giáp, An Khánh, Thủ Đức, TP.HCM";
 export const ZALO_URL = "https://zalo.me/0764949837";
 export const SITE_URL = "https://vinh-black.vercel.app";

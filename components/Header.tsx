@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Phone, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -22,10 +22,24 @@ function VwLogoWhite({ className }: { className?: string }) {
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#001e50] shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        scrolled
+          ? "bg-[#001e50]/90 backdrop-blur-md shadow-xl border-b border-white/10 h-14"
+          : "bg-[#001e50] shadow-lg h-16"
+      )}
+    >
+      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-full">
         {/* Logo */}
         <Link href="/">
           <VwLogoWhite />
