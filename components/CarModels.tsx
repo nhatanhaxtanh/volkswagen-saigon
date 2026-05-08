@@ -35,7 +35,7 @@ export default function CarModels() {
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
   return (
-    <section id="xe" className="py-20 bg-gray-50 overflow-hidden">
+    <section id="xe" className="py-14 md:py-20 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="flex items-end justify-between mb-10">
@@ -72,7 +72,7 @@ export default function CarModels() {
             {cars.map((car) => (
               <div
                 key={car.id}
-                className="flex-[0_0_280px] md:flex-[0_0_300px] lg:flex-[0_0_320px] group"
+                className="flex-[0_0_260px] sm:flex-[0_0_290px] lg:flex-[0_0_310px] group"
               >
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 h-full flex flex-col">
                   {/* Image */}

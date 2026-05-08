@@ -3,7 +3,7 @@ import { news } from "@/lib/data";
 
 export default function LatestNews() {
   return (
-    <section id="tin-tuc" className="py-20 bg-white">
+    <section id="tin-tuc" className="py-14 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <p className="text-blue-600 text-sm font-semibold tracking-widest uppercase mb-2">

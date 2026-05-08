@@ -18,7 +18,7 @@ export default function TestDriveForm() {
   }
 
   return (
-    <section id="lai-thu" className="relative py-20 overflow-hidden">
+    <section id="lai-thu" className="relative py-14 md:py-20 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <Image
@@ -31,7 +31,7 @@ export default function TestDriveForm() {
         <div className="absolute inset-0 bg-[#001e50]/85" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+      <div className="relative max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
         {/* Left content */}
         <div className="text-white">
           <p className="text-blue-300 text-sm font-semibold tracking-widest uppercase mb-3">

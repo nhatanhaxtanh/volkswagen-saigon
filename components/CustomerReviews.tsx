@@ -13,7 +13,7 @@ function Stars({ count }: { count: number }) {
 
 export default function CustomerReviews() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-14 md:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <p className="text-blue-600 text-sm font-semibold tracking-widest uppercase mb-2">
