@@ -22,7 +22,7 @@ export default function Header() {
             alt="Volkswagen Thảo Điền"
             width={140}
             height={40}
-            className="h-10 w-auto object-contain"
+            className="h-10 w-auto object-contain brightness-0 invert"
             unoptimized
           />
         </Link>
@@ -73,7 +73,7 @@ export default function Header() {
                   alt="Volkswagen Thảo Điền"
                   width={140}
                   height={40}
-                  className="h-10 w-auto object-contain"
+                  className="h-10 w-auto object-contain brightness-0 invert"
                   unoptimized
                 />
               </div>

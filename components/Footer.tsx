@@ -15,7 +15,7 @@ export default function Footer() {
               alt="Volkswagen Thảo Điền"
               width={160}
               height={44}
-              className="h-12 w-auto object-contain mb-4"
+              className="h-12 w-auto object-contain mb-4 brightness-0 invert"
               unoptimized
             />
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
