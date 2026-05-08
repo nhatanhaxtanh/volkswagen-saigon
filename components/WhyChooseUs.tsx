@@ -1,4 +1,27 @@
-import { benefits } from "@/lib/data";
+import { Users, CarFront, Truck, BadgePercent } from "lucide-react";
+
+const benefits = [
+  {
+    icon: Users,
+    title: "Tư vấn chuyên nghiệp",
+    desc: "Đội ngũ tư vấn viên được đào tạo bài bản, hỗ trợ bạn chọn xe phù hợp nhất.",
+  },
+  {
+    icon: CarFront,
+    title: "Lái thử miễn phí",
+    desc: "Trải nghiệm cảm giác lái xe Volkswagen hoàn toàn miễn phí tại showroom.",
+  },
+  {
+    icon: Truck,
+    title: "Giao xe tận nhà",
+    desc: "Dịch vụ giao xe tận nơi, tiết kiệm thời gian quý báu của bạn.",
+  },
+  {
+    icon: BadgePercent,
+    title: "Hỗ trợ vay 85%",
+    desc: "Thủ tục nhanh gọn, hỗ trợ vay vốn lên đến 85% giá trị xe với lãi suất ưu đãi.",
+  },
+];
 
 export default function WhyChooseUs() {
   return (
@@ -17,18 +40,21 @@ export default function WhyChooseUs() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {benefits.map((b) => (
-            <div
-              key={b.title}
-              className="text-center group p-6 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300"
-            >
-              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4 text-3xl group-hover:bg-blue-100 transition-colors">
-                {b.icon}
+          {benefits.map((b) => {
+            const Icon = b.icon;
+            return (
+              <div
+                key={b.title}
+                className="text-center group p-8 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="w-16 h-16 bg-[#001e50] rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-blue-600 transition-colors">
+                  <Icon size={28} className="text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="font-bold text-[#001e50] text-lg mb-2">{b.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{b.desc}</p>
               </div>
-              <h3 className="font-bold text-[#001e50] text-lg mb-2">{b.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{b.desc}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
