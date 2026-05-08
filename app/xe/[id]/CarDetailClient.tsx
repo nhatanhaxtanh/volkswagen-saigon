@@ -82,7 +82,7 @@ export default function CarDetailClient({
                       i === activeImg ? "border-blue-600" : "border-transparent opacity-50"
                     )}
                   >
-                    <Image src={img} alt="" fill className="object-cover" unoptimized />
+                    <Image src={img} alt={`${car.name} ảnh ${i + 1}`} fill className="object-cover" unoptimized />
                   </button>
                 ))}
               </div>

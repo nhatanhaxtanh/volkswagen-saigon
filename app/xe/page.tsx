@@ -6,10 +6,25 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { cars, PHONE_HREF } from "@/lib/data";
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Các dòng xe Volkswagen – Showroom Sài Gòn",
+  title: "Các dòng xe Volkswagen",
   description: "Danh sách đầy đủ các dòng xe Volkswagen tại Showroom Sài Gòn: Tiguan, Teramont, Touareg, Viloran. Liên hệ 076 4949837.",
+  alternates: { canonical: `${SITE_URL}/xe` },
+  openGraph: {
+    type: "website",
+    url: `${SITE_URL}/xe`,
+    title: "Các dòng xe Volkswagen – Showroom Sài Gòn",
+    description: "Danh sách đầy đủ các dòng xe Volkswagen tại Showroom Sài Gòn: Tiguan, Teramont, Touareg, Viloran. Liên hệ 076 4949837.",
+    images: [{ url: "/og-default.jpg", width: 1200, height: 630, alt: "Các dòng xe Volkswagen" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Các dòng xe Volkswagen – Showroom Sài Gòn",
+    description: "Danh sách đầy đủ các dòng xe Volkswagen tại Showroom Sài Gòn: Tiguan, Teramont, Touareg, Viloran.",
+    images: ["/og-default.jpg"],
+  },
 };
 
 export default function XePage() {
