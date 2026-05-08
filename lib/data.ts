@@ -512,27 +512,101 @@ export const reviews = [
   },
 ];
 
-export const news = [
+export type NewsArticle = {
+  id: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  image: string;
+  content: { type: "p" | "h2" | "h3" | "ul"; text?: string; items?: string[] }[];
+};
+
+export const news: NewsArticle[] = [
   {
+    id: "volkswagen-tiguan-facelift-2025",
     title: "Volkswagen Tiguan Facelift 2025 – Nâng cấp toàn diện, giá hấp dẫn",
     date: "10/05/2025",
     excerpt:
       "Volkswagen Tiguan Facelift 2025 mang đến diện mạo mới với nhiều công nghệ hiện đại được nâng cấp đáng kể so với thế hệ trước.",
     image: `${BASE_IMG}/2024/12/Tiguan-Facelift-2.webp`,
+    content: [
+      { type: "p", text: "Volkswagen Tiguan Facelift 2025 chính thức ra mắt tại thị trường Việt Nam với hàng loạt nâng cấp đáng chú ý về thiết kế, công nghệ và hiệu suất vận hành. Đây là phiên bản được người yêu xe VW mong đợi nhất trong năm nay." },
+      { type: "h2", text: "Thiết kế ngoại thất mới mẻ, hiện đại hơn" },
+      { type: "p", text: "Tiguan Facelift 2025 được làm mới với lưới tản nhiệt phẳng theo xu hướng thiết kế IQ.LIGHT của Volkswagen, tích hợp dải đèn LED ban ngày liền mạch chạy xuyên suốt mặt đầu xe. Cụm đèn hậu cũng được thiết kế lại với hiệu ứng 3D ấn tượng hơn." },
+      { type: "p", text: "Bộ mâm hợp kim mới 18 inch và 19 inch với nhiều tùy chọn phong cách giúp Tiguan 2025 trở nên thể thao và sang trọng hơn so với thế hệ tiền nhiệm." },
+      { type: "h2", text: "Nội thất và công nghệ vượt trội" },
+      { type: "p", text: "Bên trong khoang lái, Tiguan Facelift 2025 được trang bị màn hình cảm ứng trung tâm 12,9 inch thế hệ mới chạy hệ điều hành MIB4, hỗ trợ kết nối không dây với Apple CarPlay và Android Auto. Cụm đồng hồ kỹ thuật số Digital Cockpit Pro 10,25 inch hiển thị đầy đủ thông tin lái xe." },
+      { type: "ul", items: [
+        "Màn hình cảm ứng 12,9 inch MIB4",
+        "Điều hòa 3 vùng Climatronic tự động",
+        "Ghế lái chỉnh điện 12 hướng có sưởi và làm mát",
+        "Hệ thống âm thanh Harman Kardon 12 loa",
+        "Cốp điện với cảm biến chân",
+        "Camera 360° độ phân giải cao",
+      ]},
+      { type: "h2", text: "Động cơ và vận hành" },
+      { type: "p", text: "Tiguan Facelift 2025 tiếp tục sử dụng khối động cơ 2.0L TSI Turbo sản sinh 190 mã lực và 320 Nm mô-men xoắn, kết hợp hộp số ly hợp kép DSG 7 cấp. Hệ dẫn động 4Motion AWD thông minh phân phối lực kéo linh hoạt theo điều kiện mặt đường." },
+      { type: "h2", text: "Giá bán và chính sách ưu đãi tại Volkswagen Sài Gòn" },
+      { type: "p", text: "Volkswagen Tiguan Facelift 2025 được phân phối chính hãng tại Showroom Volkswagen Sài Gòn với mức giá cạnh tranh. Khách hàng đặt cọc trong tháng 5/2025 sẽ được hưởng gói ưu đãi đặc biệt bao gồm hỗ trợ lãi suất 0% trong 12 tháng đầu và tặng gói phụ kiện chính hãng trị giá đến 50 triệu đồng." },
+      { type: "p", text: "Liên hệ hotline 076 4949837 hoặc đến trực tiếp showroom tại 507C Võ Nguyễn Giáp, An Khánh, Thủ Đức, TP.HCM để được tư vấn và lái thử miễn phí." },
+    ],
   },
   {
+    id: "teramont-x-platinum-suv-cao-cap",
     title: "Teramont X Platinum – SUV 5 chỗ cao cấp nhất của VW tại Việt Nam",
     date: "05/05/2025",
     excerpt:
       "Volkswagen Teramont X Platinum 2025 là đỉnh cao của dòng Teramont X với trang bị full option, động cơ mạnh mẽ và công nghệ vượt trội.",
     image: `${BASE_IMG}/2025/05/Betterimage.ai_1747730163872.webp`,
+    content: [
+      { type: "p", text: "Volkswagen Teramont X Platinum 2025 vừa chính thức gia nhập thị trường Việt Nam, đánh dấu cột mốc quan trọng trong phân khúc SUV 5 chỗ hạng sang. Với thiết kế Coupe-SUV độc đáo và trang bị full option, Teramont X Platinum khẳng định vị thế đỉnh cao của thương hiệu VW tại Việt Nam." },
+      { type: "h2", text: "Thiết kế Coupe-SUV nổi bật" },
+      { type: "p", text: "Teramont X Platinum gây ấn tượng mạnh với đường nóc vát dốc đặc trưng kiểu Coupe-SUV, kết hợp cùng kích thước SUV cỡ lớn. Mặt đầu xe được thiết kế lại hoàn toàn với lưới tản nhiệt IQ.LIGHT rộng bản, tích hợp dải đèn LED ban ngày chạy xuyên suốt tạo điểm nhấn thị giác mạnh mẽ." },
+      { type: "p", text: "Cụm đèn pha Matrix LED tự động điều chỉnh chùm sáng thông minh theo tình huống giao thông, vừa đảm bảo an toàn tối đa vừa không làm chói mắt các phương tiện đi ngược chiều." },
+      { type: "h2", text: "Khoang nội thất đẳng cấp hạng sang" },
+      { type: "ul", items: [
+        "Màn hình cảm ứng trung tâm 15 inch MIB4 thế hệ mới",
+        "Ghế da Nappa cao cấp chỉnh điện 14 hướng cho hàng ghế trước",
+        "Hệ thống âm thanh Dynaudio Premium 14 loa",
+        "Điều hòa 3 vùng độc lập với chế độ làm sạch không khí",
+        "Panoramic Sunroof cửa sổ trời toàn cảnh 2 lớp",
+        "Hệ thống đỗ xe tự động Park Assist Pro",
+        "Head-up Display hiển thị thông tin trên kính lái",
+      ]},
+      { type: "h2", text: "Sức mạnh động cơ và công nghệ an toàn" },
+      { type: "p", text: "Teramont X Platinum được trang bị khối động cơ 2.0L TSI 4 xi-lanh tăng áp, cho công suất tối đa 220 mã lực và mô-men xoắn 350 Nm. Kết hợp với hộp số tự động DSG 7 cấp và hệ dẫn động 4Motion AWD, xe có thể tăng tốc từ 0-100km/h chỉ trong 7,5 giây." },
+      { type: "p", text: "Hệ thống IQ.DRIVE tích hợp đầy đủ các tính năng hỗ trợ lái tiên tiến: kiểm soát hành trình thích ứng ACC, cảnh báo va chạm phía trước với phanh khẩn cấp tự động, hỗ trợ giữ làn đường, cảnh báo điểm mù và hỗ trợ đỗ xe tự động." },
+      { type: "h2", text: "Trải nghiệm lái thử tại Volkswagen Sài Gòn" },
+      { type: "p", text: "Showroom Volkswagen Sài Gòn hiện đang trưng bày xe Teramont X Platinum 2025 và nhận lịch lái thử miễn phí. Đội ngũ tư vấn chuyên nghiệp sẽ hỗ trợ bạn tìm hiểu chi tiết về xe và các gói tài chính hấp dẫn với lãi suất ưu đãi, hỗ trợ vay đến 85% giá trị xe." },
+    ],
   },
   {
+    id: "volkswagen-viloran-mpv-hang-sang",
     title: "Volkswagen Viloran – MPV hạng sang lý tưởng cho gia đình",
     date: "01/05/2025",
     excerpt:
       "Viloran 2025 tiếp tục khẳng định vị thế MPV cao cấp với nội thất sang trọng, không gian rộng rãi và loạt công nghệ tiên tiến.",
     image: `${BASE_IMG}/2024/11/Volkswagen-Viloran-Luxury-21.webp`,
+    content: [
+      { type: "p", text: "Volkswagen Viloran 2025 tiếp tục là lựa chọn hàng đầu trong phân khúc MPV 7 chỗ cao cấp tại Việt Nam. Với triết lý thiết kế lấy người dùng làm trung tâm, Viloran mang đến trải nghiệm di chuyển sang trọng và thoải mái nhất cho mọi thành viên trong gia đình." },
+      { type: "h2", text: "Không gian nội thất rộng rãi, đẳng cấp" },
+      { type: "p", text: "Viloran 2025 gây ấn tượng ngay từ cái nhìn đầu tiên với khoang nội thất rộng rãi bậc nhất phân khúc. Chiều dài cơ sở 3.180 mm đảm bảo không gian để chân thoải mái cho cả 7 hành khách, đặc biệt là hàng ghế thứ 2 với kiểu ghế thương gia (Captain Seats) có thể ngả tựa và kéo dài." },
+      { type: "ul", items: [
+        "Ghế hàng 2 kiểu thương gia chỉnh điện 8 hướng",
+        "Cửa trượt điện 2 bên với cảm biến chướng ngại vật",
+        "Màn hình giải trí hàng ghế sau 10 inch",
+        "Hệ thống điều hòa 3 vùng độc lập",
+        "Bàn làm việc gấp tích hợp tại hàng ghế giữa",
+        "Sàn xe phẳng thoáng không có cầu truyền động",
+      ]},
+      { type: "h2", text: "Công nghệ hiện đại, an toàn thông minh" },
+      { type: "p", text: "Viloran 2025 được trang bị màn hình cảm ứng trung tâm 10 inch, hệ thống âm thanh 8 loa chất lượng cao và kết nối không dây với Apple CarPlay / Android Auto. Hệ thống camera 360° độ phân giải cao hỗ trợ quan sát toàn cảnh xung quanh xe, giúp việc đỗ xe và di chuyển trong đô thị trở nên dễ dàng hơn." },
+      { type: "p", text: "Về an toàn, Viloran được trang bị 6 túi khí, hệ thống phanh ABS + EBD + ESC, cảnh báo va chạm phía trước, hỗ trợ giữ làn đường và kiểm soát hành trình thích ứng. Tất cả nhằm bảo vệ tối đa cho các thành viên trong gia đình bạn." },
+      { type: "h2", text: "Hai phiên bản phù hợp mọi nhu cầu" },
+      { type: "p", text: "Volkswagen Viloran 2025 tại thị trường Việt Nam có 2 phiên bản: Viloran Premium (2.088.000.000 ₫) và Viloran Luxury (2.288.000.000 ₫). Cả hai đều được nhập khẩu nguyên chiếc, bảo hành chính hãng 5 năm hoặc 150.000 km tùy điều kiện đến trước." },
+      { type: "h2", text: "Đặt lịch lái thử ngay hôm nay" },
+      { type: "p", text: "Showroom Volkswagen Sài Gòn tại 507C Võ Nguyễn Giáp, An Khánh, Thủ Đức, TP.HCM đang có xe trưng bày và nhận đặt cọc. Liên hệ hotline 076 4949837 để được tư vấn và sắp xếp lái thử miễn phí tận nơi." },
+    ],
   },
 ];
 
