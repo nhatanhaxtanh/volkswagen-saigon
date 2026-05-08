@@ -1,13 +1,24 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Phone, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { BASE_IMG, navLinks, PHONE, PHONE_HREF } from "@/lib/data";
+import { navLinks, PHONE, PHONE_HREF } from "@/lib/data";
+
+function VwLogoWhite({ className }: { className?: string }) {
+  return (
+    <div className={cn("flex items-center gap-2.5", className)}>
+      <img src="/vw-logo-white.svg" alt="VW" className="h-9 w-9" />
+      <div className="text-white leading-tight">
+        <div className="font-bold text-base tracking-wide">Volkswagen</div>
+        <div className="text-xs text-white/70 tracking-widest uppercase">Thảo Điền</div>
+      </div>
+    </div>
+  );
+}
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -16,16 +27,8 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#001e50] shadow-lg">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <Image
-            src={`${BASE_IMG}/2025/04/2-png.webp`}
-            alt="Volkswagen Thảo Điền"
-            width={140}
-            height={40}
-            className="h-10 w-auto object-contain"
-            style={{ filter: "brightness(0) invert(1)" }}
-            unoptimized
-          />
+        <Link href="/">
+          <VwLogoWhite />
         </Link>
 
         {/* Desktop Nav */}
@@ -69,15 +72,7 @@ export default function Header() {
           <SheetContent side="right" className="bg-[#001e50] border-white/10 w-72 p-0">
             <div className="flex flex-col h-full pt-6">
               <div className="px-6 mb-6">
-                <Image
-                  src={`${BASE_IMG}/2025/04/2-png.webp`}
-                  alt="Volkswagen Thảo Điền"
-                  width={140}
-                  height={40}
-                  className="h-10 w-auto object-contain"
-                  style={{ filter: "brightness(0) invert(1)" }}
-                  unoptimized
-                />
+                <VwLogoWhite />
               </div>
               <nav className="flex flex-col">
                 {navLinks.map((link) => (

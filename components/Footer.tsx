@@ -1,7 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
-import { ADDRESS, BASE_IMG, EMAIL, navLinks, PHONE, PHONE_HREF, ZALO_URL } from "@/lib/data";
+import { ADDRESS, EMAIL, navLinks, PHONE, PHONE_HREF } from "@/lib/data";
 
 export default function Footer() {
   return (
@@ -10,15 +9,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Image
-              src={`${BASE_IMG}/2025/04/2-png.webp`}
-              alt="Volkswagen Thảo Điền"
-              width={160}
-              height={44}
-              className="h-12 w-auto object-contain mb-4"
-              style={{ filter: "brightness(0) invert(1)" }}
-              unoptimized
-            />
+            <div className="flex items-center gap-2.5 mb-4">
+              <img src="/vw-logo-white.svg" alt="VW" className="h-10 w-10" />
+              <div className="text-white leading-tight">
+                <div className="font-bold text-base tracking-wide">Volkswagen</div>
+                <div className="text-xs text-white/60 tracking-widest uppercase">Thảo Điền</div>
+              </div>
+            </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
               Đại lý Volkswagen chính hãng tại TP.HCM. Chúng tôi cam kết mang
               đến trải nghiệm mua xe tốt nhất với dịch vụ chuyên nghiệp và
