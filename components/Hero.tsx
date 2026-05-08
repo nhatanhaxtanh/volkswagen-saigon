@@ -73,11 +73,11 @@ export default function Hero() {
                 src={slide.image}
                 alt={slide.label}
                 fill
-                className="object-cover object-center opacity-45"
+                className="object-cover object-center opacity-80"
                 priority={i === 0}
                 unoptimized
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#001e50]/90 via-[#001e50]/55 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#001e50]/80 via-[#001e50]/30 to-transparent" />
 
               {/* Content */}
               <div className="relative h-full max-w-7xl mx-auto px-4 flex items-center">
