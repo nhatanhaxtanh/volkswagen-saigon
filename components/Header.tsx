@@ -22,7 +22,8 @@ export default function Header() {
             alt="Volkswagen Thảo Điền"
             width={140}
             height={40}
-            className="h-10 w-auto object-contain brightness-0 invert"
+            className="h-10 w-auto object-contain"
+            style={{ filter: "brightness(0) invert(1)" }}
             unoptimized
           />
         </Link>
@@ -73,7 +74,8 @@ export default function Header() {
                   alt="Volkswagen Thảo Điền"
                   width={140}
                   height={40}
-                  className="h-10 w-auto object-contain brightness-0 invert"
+                  className="h-10 w-auto object-contain"
+                  style={{ filter: "brightness(0) invert(1)" }}
                   unoptimized
                 />
               </div>
