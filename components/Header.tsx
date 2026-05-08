@@ -14,7 +14,7 @@ function VwLogoWhite({ className }: { className?: string }) {
       <img src="/vw-logo-white.svg" alt="VW" className="h-9 w-9" />
       <div className="text-white leading-tight">
         <div className="font-bold text-base tracking-wide">Volkswagen</div>
-        <div className="text-xs text-white/70 tracking-widest uppercase">Thảo Điền</div>
+        <div className="text-xs text-white/70 tracking-widest uppercase">Sài Gòn</div>
       </div>
     </div>
   );

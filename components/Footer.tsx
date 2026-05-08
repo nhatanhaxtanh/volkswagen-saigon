@@ -13,7 +13,7 @@ export default function Footer() {
               <img src="/vw-logo-white.svg" alt="VW" className="h-10 w-10" />
               <div className="text-white leading-tight">
                 <div className="font-bold text-base tracking-wide">Volkswagen</div>
-                <div className="text-xs text-white/60 tracking-widest uppercase">Thảo Điền</div>
+                <div className="text-xs text-white/60 tracking-widest uppercase">Sài Gòn</div>
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
@@ -101,7 +101,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-xs">
-            © 2025 Volkswagen Thảo Điền. Bảo lưu mọi quyền.
+            © 2025 Volkswagen Sài Gòn. Bảo lưu mọi quyền.
           </p>
           <p className="text-gray-500 text-xs">
             507C Võ Nguyễn Giáp, An Khánh, Thủ Đức, TP.HCM
