@@ -5,7 +5,11 @@
       "Bash(npx shadcn@latest *)",
       "Bash(npm run *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(vercel whoami *)",
+      "Bash(vercel *)",
+      "Bash(curl -s \"https://volkswagenthaodien.vn/\")",
+      "Bash(npm install *)"
     ]
   }
 }
