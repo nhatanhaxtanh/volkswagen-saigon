@@ -42,7 +42,6 @@ export default function CustomerReviews() {
                     width={40}
                     height={40}
                     className="object-cover w-full h-full"
-                    unoptimized
                   />
                 </div>
                 <div>

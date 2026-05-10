@@ -73,7 +73,6 @@ export default function Hero() {
                 fill
                 className="object-cover object-center opacity-80"
                 priority={i === 0}
-                unoptimized
               />
               {/* Gradient: stronger on mobile, fades right on desktop */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#001e50]/80 via-[#001e50]/40 to-[#001e50]/30 md:bg-none" />

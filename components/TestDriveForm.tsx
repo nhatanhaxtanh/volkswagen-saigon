@@ -26,7 +26,6 @@ export default function TestDriveForm() {
           alt="Volkswagen interior"
           fill
           className="object-cover object-center"
-          unoptimized
         />
         <div className="absolute inset-0 bg-[#001e50]/85" />
       </div>

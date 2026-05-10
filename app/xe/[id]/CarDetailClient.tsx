@@ -45,7 +45,6 @@ export default function CarDetailClient({
                 alt={car.name}
                 fill
                 className="object-cover transition-all duration-500"
-                unoptimized
                 priority
               />
               {car.gallery.length > 1 && (
@@ -82,7 +81,7 @@ export default function CarDetailClient({
                       i === activeImg ? "border-blue-600" : "border-transparent opacity-50"
                     )}
                   >
-                    <Image src={img} alt={`${car.name} ảnh ${i + 1}`} fill className="object-cover" unoptimized />
+                    <Image src={img} alt={`${car.name} ảnh ${i + 1}`} fill className="object-cover" />
                   </button>
                 ))}
               </div>
@@ -224,7 +223,6 @@ export default function CarDetailClient({
                       alt={c.name}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      unoptimized
                     />
                   </div>
                   <div className="p-2.5 md:p-3">

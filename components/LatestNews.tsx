@@ -28,7 +28,6 @@ export default function LatestNews() {
                   alt={article.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  unoptimized
                 />
               </div>
               <div className="p-5 flex flex-col flex-1">

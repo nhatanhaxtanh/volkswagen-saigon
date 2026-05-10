@@ -64,11 +64,25 @@ export default async function NewsDetailPage({
     url: `${SITE_URL}/tin-tuc/${article.id}`,
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Trang chủ", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Tin tức & Sự kiện", item: `${SITE_URL}/#tin-tuc` },
+      { "@type": "ListItem", position: 3, name: article.title, item: `${SITE_URL}/tin-tuc/${article.id}` },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <main className="min-h-screen bg-gray-50 pt-16">
         {/* Hero */}
@@ -99,7 +113,6 @@ export default async function NewsDetailPage({
               alt={article.title}
               fill
               className="object-cover"
-              unoptimized
               priority
             />
           </div>
@@ -155,7 +168,6 @@ export default async function NewsDetailPage({
                         alt={a.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
-                        unoptimized
                       />
                     </div>
                     <div className="py-4 pr-4 flex flex-col justify-center">

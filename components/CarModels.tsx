@@ -82,7 +82,6 @@ export default function CarModels() {
                       alt={car.name}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      unoptimized
                     />
                     {car.badge && (
                       <Badge className="absolute top-3 left-3 bg-blue-600 text-white text-xs">

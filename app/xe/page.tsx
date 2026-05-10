@@ -4,9 +4,11 @@ import { ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { cars, PHONE_HREF } from "@/lib/data";
+import { cars, PHONE_HREF, BASE_IMG } from "@/lib/data";
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/data";
+
+const OG_IMAGE = `${BASE_IMG}/2024/11/Volkswagen-Tiguan-Platinum.webp`;
 
 export const metadata: Metadata = {
   title: "Các dòng xe Volkswagen",
@@ -17,13 +19,13 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/xe`,
     title: "Các dòng xe Volkswagen – Showroom Sài Gòn",
     description: "Danh sách đầy đủ các dòng xe Volkswagen tại Showroom Sài Gòn: Tiguan, Teramont, Touareg, Viloran. Liên hệ 076 4949837.",
-    images: [{ url: "/og-default.jpg", width: 1200, height: 630, alt: "Các dòng xe Volkswagen" }],
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Các dòng xe Volkswagen" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Các dòng xe Volkswagen – Showroom Sài Gòn",
     description: "Danh sách đầy đủ các dòng xe Volkswagen tại Showroom Sài Gòn: Tiguan, Teramont, Touareg, Viloran.",
-    images: ["/og-default.jpg"],
+    images: [OG_IMAGE],
   },
 };
 
@@ -64,7 +66,6 @@ export default function XePage() {
                   alt={car.name}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  unoptimized
                 />
                 {car.badge && (
                   <Badge className="absolute top-3 left-3 bg-blue-600 text-white text-xs">

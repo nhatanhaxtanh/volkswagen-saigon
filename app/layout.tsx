@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import { SITE_URL, PHONE, ADDRESS, EMAIL } from "@/lib/data";
+import { SITE_URL, PHONE, ADDRESS, EMAIL, reviews } from "@/lib/data";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -30,16 +30,20 @@ export const metadata: Metadata = {
     title: "Volkswagen Sài Gòn – Đại lý VW chính hãng tại TP.HCM",
     description:
       "Showroom Volkswagen Sài Gòn – Mua xe VW chính hãng, tư vấn miễn phí, lái thử tận nơi, hỗ trợ vay 85%. Hotline: 076 4949837",
-    images: [{ url: "/og-default.jpg", width: 1200, height: 630, alt: "Volkswagen Sài Gòn" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Volkswagen Sài Gòn – Đại lý VW chính hãng tại TP.HCM",
     description:
       "Showroom Volkswagen Sài Gòn – Mua xe VW chính hãng, tư vấn miễn phí, lái thử tận nơi, hỗ trợ vay 85%.",
-    images: ["/og-default.jpg"],
   },
 };
+
+export const viewport: Viewport = {
+  themeColor: "#001e50",
+};
+
+const avgRating = reviews.reduce((s, r) => s + r.rating, 0) / reviews.length;
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -66,6 +70,19 @@ const localBusinessSchema = {
     opens: "08:00",
     closes: "19:00",
   },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: avgRating.toFixed(1),
+    reviewCount: reviews.length,
+    bestRating: 5,
+    worstRating: 1,
+  },
+  review: reviews.map((r) => ({
+    "@type": "Review",
+    author: { "@type": "Person", name: r.name },
+    reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5 },
+    reviewBody: r.comment,
+  })),
   sameAs: [`https://zalo.me/0764949837`],
 };
 
