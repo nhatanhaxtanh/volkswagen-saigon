@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { cars, PHONE, PHONE_HREF, ZALO_URL, SITE_URL } from "@/lib/data";
+import { cars, reviews, PHONE, PHONE_HREF, ZALO_URL, SITE_URL } from "@/lib/data";
 import CarDetailClient from "./CarDetailClient";
 
 export function generateStaticParams() {
@@ -47,6 +47,13 @@ export default async function CarDetailPage({
 
   const related = cars.filter((c) => c.id !== car.id).slice(0, 4);
 
+  const carReviews = reviews.filter((r) =>
+    car.name.toLowerCase().includes(r.car.split(" ")[0].toLowerCase()) ||
+    r.car.toLowerCase().includes(car.name.split(" ")[0].toLowerCase())
+  );
+  const ratingSource = carReviews.length > 0 ? carReviews : reviews;
+  const avgRating = ratingSource.reduce((s, r) => s + r.rating, 0) / ratingSource.length;
+
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -62,6 +69,19 @@ export default async function CarDetailPage({
       url: `${SITE_URL}${car.href}`,
       seller: { "@type": "AutoDealer", name: "Volkswagen Sài Gòn" },
     },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: avgRating.toFixed(1),
+      reviewCount: ratingSource.length,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    review: ratingSource.map((r) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: r.name },
+      reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5 },
+      reviewBody: r.comment,
+    })),
   };
 
   const breadcrumbSchema = {
